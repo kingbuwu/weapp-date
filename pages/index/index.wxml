@@ -1,0 +1,4 @@
+<!--时间选择插件  -->
+<view>
+  <my-date bind:bindSelect="bindSelect"></my-date>
+</view>

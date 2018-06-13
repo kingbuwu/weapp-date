@@ -1,0 +1,34 @@
+/*向右*/
+
+.triangle_border_right {
+  width: 0;
+  height: 0;
+  border-width: 5px 0 5px 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent #f26b3a; /*透明 透明 透明 灰*/
+  position: absolute;
+  z-index: 2;
+  left: 170rpx;
+  top:10rpx;
+}
+
+.tips {
+  width: 175rpx;
+  height: 40rpx;
+  font-size: 20rpx;
+  background-color: #f26b3a;
+  color: #fff;
+  position: absolute;
+  z-index: 2;
+  left: 230rpx;
+  top: 25rpx;
+  border-radius: 5rpx;
+  text-align: center;
+  line-height: 40rpx;
+}
+.box{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}

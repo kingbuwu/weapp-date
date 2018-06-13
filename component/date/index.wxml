@@ -1,0 +1,27 @@
+<view class='box' style='position: relative;'>
+  <view class='left-choose'>选择时间:</view>
+  <view>
+    <view class="tips" wx:if='{{!isdate}}'>时间不能早于当前
+      <view class="triangle_border_right"></view>
+    </view>
+    <!-- 向右的三角形 -->
+    <view class="zan-cell zan-cell--access">
+      <view wx:if="{{date.dates}}" style='padding-right:30rpx;' class="zan-cell__ft" bindtap='showDate'>{{date.dates + '\t' + date.week + '\t' + hour + ':' + minute}}</view>
+      <view wx:if="{{!date.dates}}" style='padding-right:30rpx;' class="zan-cell__ft" bindtap='showDate'>{{dateList[0].dates + '\t' + dateList[0].week + '\t' + todayhour + ':' + todayminutes}}</view>
+      <view class='ft_right' style='border-color: #c8c8c8;'></view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{showselect}}">
+  <picker-view indicator-style="height: 40px;z-index:1;" mask-style="z-index:1;" style="width: 100%;text-align: center; height: 120px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{dateList}}" wx:key="index" style="line-height: 40px;font-size:14px;text-align: center;">{{item.dates + "\t" + item.week}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{hours}}" wx:key="index" style="line-height: 40px;font-size:14px;text-align: center;">{{item}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{minutes}}" wx:key="index" style="line-height: 40px;font-size:14px;text-align: center;">{{item}}</view>
+    </picker-view-column>
+  </picker-view>
+</view>
